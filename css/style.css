@@ -1,0 +1,9 @@
+/************** Custome css *****************/
+
+/****** Genaral Color ******/
+::root {
+    --primary: #2262c1;
+    --secondary: #f9c73c;
+    --tertiary: #3bb6ef;
+    --text-color: #fff;
+}
