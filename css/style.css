@@ -1,27 +1,69 @@
 /************** Custome css *****************/
 
 /****** Genaral Color ******/
+*{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
 :root {
-    --primary: #6722c1 !important;
-    --secondary: #f9c73c;
-    --tertiary: #3bb6ef;
-    --text-: #fff;
+    --primary: rgb(147 51 234);
+    --secondary: rgb(75 85 99);
+    --text-hover: rgb(126 34 206);
+    --bg-hover: rgb(126 34 206);
+    --text-gray: rgb(156 163 175);
+    --text-light: rgb(107 114 128);
+    --text-white: rgb(255 255 255);
+    --text-black: rgb(0 0 0);
+    --border-gray: rgb(209 213 219);
 }
 
 .container {
     width: 97%;
     margin: 0 auto;
-    padding: 15px;
+    padding: 10px;
 }
 
 /* header styles */
 
 .header {
- display: flex;
+    display: flex;
+    justify-content: space-between;
+}
+
+.header .brand {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header .brand .gradient-box {
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(to right, #9f7aea, #fc8181);
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.header .brand .logo-text a {
+    font-size: 30px;
+    line-height: 36px;
+    color: var(--secondary);
+    margin-left: 10px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.header .links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
 }
 
 .header .links .link {
     text-decoration: none;
+    color: var(--secondary);
+    font-size: 16px;
 }
 
 .header .links .cart {
@@ -30,12 +72,53 @@
     justify-content: center;
     text-align: center;
     background: var(--primary);
-    padding: 10px 20px;
-    border-radius: 50%;
+    padding: 13px 15px;
+    border-radius: 70px;
+    color: var(--text-white);
+    cursor: pointer;
+}
+
+.header .links .cart:hover {
+    background: var(--bg-hover);
 }
 
 .header .links .cart img {
     margin-right: 8px;
     width: 20px;
     height: 20px;
+    filter: brightness(0) invert(1);
 }
+
+
+
+/* responsive css */
+
+/* Téléphone Petit */
+/* @media only screen and (max-width: 320px){} */
+
+/* Téléphone Moyen */
+@media only screen and (max-width: 767px){
+    .header {
+        flex-direction: column;
+        gap:5px;
+    }
+}
+
+
+/* Tablette */
+@media only screen and (min-width: 768px) and (max-width: 1024px) {}
+
+/* Tablette Large */
+@media only screen and (min-width: 1025px) and (max-width: 1280px){}
+
+/* Ordinateur Portable */
+@media only screen and (min-width: 1281px) and (max-width: 1440px){}
+
+/* Bureau Petit */
+@media only screen and (min-width: 1441px) and (max-width: 1920px){}
+
+/* 4K Ultra HD */
+@media only screen and (min-width: 2561px) and (max-width: 3840px){}
+
+/* 8K Ultra HD */
+@media only screen and (min-width: 3841px){}
