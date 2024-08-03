@@ -1,9 +1,41 @@
 /************** Custome css *****************/
 
 /****** Genaral Color ******/
-::root {
-    --primary: #2262c1;
+:root {
+    --primary: #6722c1 !important;
     --secondary: #f9c73c;
     --tertiary: #3bb6ef;
-    --text-color: #fff;
+    --text-: #fff;
+}
+
+.container {
+    width: 97%;
+    margin: 0 auto;
+    padding: 15px;
+}
+
+/* header styles */
+
+.header {
+ display: flex;
+}
+
+.header .links .link {
+    text-decoration: none;
+}
+
+.header .links .cart {
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    background: var(--primary);
+    padding: 10px 20px;
+    border-radius: 50%;
+}
+
+.header .links .cart img {
+    margin-right: 8px;
+    width: 20px;
+    height: 20px;
 }
