@@ -1,8 +1,14 @@
 /************** Custome css *****************/
 
 /****** Genaral Color ******/
-*{
+* {
     font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
 }
 
 :root {
@@ -15,12 +21,22 @@
     --text-white: rgb(255 255 255);
     --text-black: rgb(0 0 0);
     --border-gray: rgb(209 213 219);
+    --btn-gradient: linear-gradient(to right, #dc2626, #ec4899);
+    --btn-gradient-hover: linear-gradient(to right, #ec4899, #dc2626);
+    --bg-gradient: linear-gradient(to right, #9f7aea, #fc8181);
+    --border-raduis: 9999px;
 }
 
 .container {
-    width: 97%;
+    width: 80%;
     margin: 0 auto;
     padding: 10px;
+}
+
+.img-fluid {
+    max-width: 100%;
+    height: auto;
+    display: block;
 }
 
 /* header styles */
@@ -39,7 +55,7 @@
 .header .brand .gradient-box {
     width: 40px;
     height: 40px;
-    background: linear-gradient(to right, #9f7aea, #fc8181);
+    background: var(--bg-gradient);
     border-radius: 8px;
     cursor: pointer;
 }
@@ -57,7 +73,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 30px;
+    gap: 40px;
+    padding: 0 auto;
 }
 
 .header .links .link {
@@ -72,8 +89,8 @@
     justify-content: center;
     text-align: center;
     background: var(--primary);
-    padding: 13px 15px;
-    border-radius: 70px;
+    padding: 12px 16px;
+    border-radius: var(--border-raduis);
     color: var(--text-white);
     cursor: pointer;
 }
@@ -84,9 +101,75 @@
 
 .header .links .cart img {
     margin-right: 8px;
-    width: 20px;
-    height: 20px;
+    width: 22px;
+    height: 22px;
     filter: brightness(0) invert(1);
+}
+
+/* hero styles */
+.hero {
+    padding: 78px 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.hero-text,
+.hero-img {
+    flex: 1;
+    box-sizing: border-box;
+}
+
+.hero .hero-text {
+    max-width: 45%;
+}
+
+.hero .hero-img {
+    display: flex;
+    justify-content: end;
+    max-width: 55%;
+}
+
+.hero .hero-text h1 {
+    font-family: 'Times New Roman', serif;
+    font-size: 3rem;
+    color: var(--secondary);
+    margin-bottom: 1rem;
+    text-align: left;
+}
+
+.hero .hero-text p {
+    text-transform: uppercase;
+    color: var(--secondary);
+    letter-spacing: 0.05em;
+    text-align: left;
+    margin-bottom: 0.5rem;
+}
+
+.hero .hero-text a {
+    background: var(--btn-gradient);
+    border-radius: var(--border-raduis);
+    padding: 1rem 2rem;
+    color: #f9fafb;
+    text-transform: uppercase;
+    font-size: 1.25rem;
+    margin: 1.25rem 0;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    transition: background 0.3s ease;
+}
+
+.hero .hero-text a:hover {
+    background: var(--btn-gradient-hover);
+}
+
+
+.hero .hero-img img {
+    width: 700px;
 }
 
 
@@ -94,31 +177,121 @@
 /* responsive css */
 
 /* Téléphone Petit */
-/* @media only screen and (max-width: 320px){} */
+@media only screen and (max-width: 350px) {
+    .header .links {
+        gap: 1px;
+    }
+
+    .header .links .cart {
+        padding: 8px 12px;
+    }
+
+    .header .links .cart img {
+        margin-right: 5px;
+        width: 20px;
+        height: 20px;
+    }
+
+    .header .links .link {
+        font-size: 14px;
+    }
+
+    .header .links .cart .badge1 {
+        display: none;
+    }
+}
 
 /* Téléphone Moyen */
-@media only screen and (max-width: 767px){
+
+@media only screen and (min-width: 351px) {
+.header .links .cart .badge1 {
+        display: block;
+    }
+
+    .header .links .cart .badge {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 767px) {
     .header {
         flex-direction: column;
-        gap:5px;
+        gap: 5px;
     }
+
+    .header .links {
+        gap: 20px;
+    }
+
+    .hero {
+        flex-direction: column;
+        gap: 20px;
+        padding: 20px 0;
+    }
+
+    .hero .hero-img {
+        justify-content: center;
+        align-items: center;
+        padding: 0 30px;
+        display: flex;
+        max-width: 100%;
+    }
+
+    .hero .hero-text {
+        max-width: 100%;
+        padding: 0 30px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .hero .hero-img img {
+        width: 600px;
+    }
+
+    .container {
+        width: 100%;
+        margin: 0;
+    }
+
+    .hero .hero-text h1 {
+        text-align: center;
+        font-size: 2.6rem;
+    }
+
 }
 
 
 /* Tablette */
-@media only screen and (min-width: 768px) and (max-width: 1024px) {}
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+
+    .hero .hero-text h1,
+    p {
+        align-self: flex-start;
+        text-align: left;
+    }
+
+    .hero .hero-text a {
+        align-self: flex-start;
+    }
+
+    .hero .hero-text h1 {
+        font-size: 2.6rem;
+    }
+}
 
 /* Tablette Large */
-@media only screen and (min-width: 1025px) and (max-width: 1280px){}
+@media only screen and (min-width: 1025px) and (max-width: 1280px) {}
 
 /* Ordinateur Portable */
-@media only screen and (min-width: 1281px) and (max-width: 1440px){}
+@media only screen and (min-width: 1281px) and (max-width: 1440px) {}
 
 /* Bureau Petit */
-@media only screen and (min-width: 1441px) and (max-width: 1920px){}
+@media only screen and (min-width: 1441px) and (max-width: 1920px) {}
 
 /* 4K Ultra HD */
-@media only screen and (min-width: 2561px) and (max-width: 3840px){}
+@media only screen and (min-width: 2561px) and (max-width: 3840px) {}
 
 /* 8K Ultra HD */
-@media only screen and (min-width: 3841px){}
+@media only screen and (min-width: 3841px) {}
