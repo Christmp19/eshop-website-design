@@ -17,7 +17,7 @@ This project showcases a design for an e-commerce website (eshop) using only HTM
       <img src="/img/cover3.png?raw=true" alt="Cover 3" width="200">
     </td>
     <td align="center">
-      <img src="/img/cover4.png?raw=true" alt="Cover 4" width="150">
+      <img src="/img/cover4.png?raw=true" alt="Cover 4" width="180">
     </td>
   </tr>
 </table>
