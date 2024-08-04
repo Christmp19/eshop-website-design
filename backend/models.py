@@ -1,5 +1,5 @@
 from sqlalchemy import Column, Integer, String, Float
-from backend.database import Base
+from database import Base
 
 
 class CartItem(Base):
