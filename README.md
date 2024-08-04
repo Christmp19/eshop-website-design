@@ -8,7 +8,7 @@ This project showcases a design for an e-commerce website (eshop) using only HTM
 ![Cover 1](/img/cover1.png)
 
 ### Cover 2 and Cover 3
-<table>
+<table align="center">
   <tr>
     <td align="center">
       <img src="/img/cover2.png?raw=true" alt="Cover 2" width="300">
