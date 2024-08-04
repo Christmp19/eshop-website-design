@@ -12,6 +12,10 @@ from .database import SessionLocal, engine
 
 app = FastAPI()
 
+@app.get("/")
+async def read_root():
+    return {"message": "Hello World"}
+
 # Permettre l'accès CORS à votre API
 origins = [
     "http://localhost",            # Frontend local
