@@ -9,7 +9,7 @@ This project showcases a design for an e-commerce website (eshop) using only HTM
 
 ### Cover 2 and Cover 3
 <div style="display: flex; justify-content: space-between; align-items: center;">
-  <img src="/img/cover2.png" alt="Cover 2" style="width: 49%;">
+  <img src="/img/cover2.png" alt="Cover 2" style="width: 30%;">
   <img src="/img/cover3.png" alt="Cover 3" style="width: 20%;">
 </div>
 
