@@ -1,6 +1,6 @@
 # Eshop Website Design with HTML and CSS
 
-This project showcases a design for an e-commerce website (eshop) using only HTML and CSS. The design is responsive and adapts to different screen sizes.
+This project showcases a design for an e-commerce website (eshop) using only HTML and CSS. The design is responsive and adapts to different screen sizes. Additionally, it includes a backend built with FastAPI for managing dynamic functionalities such as shopping cart management and other server-side operations.
 
 ## Preview
 
@@ -40,33 +40,54 @@ This project showcases a design for an e-commerce website (eshop) using only HTM
 
 2. Open `index.html` in your browser to view the website.
 
-## Structure des dossiers
+## Backend Integration
 
-├── backend/
-│   ├── main.py
-│   ├── database.py
-│   ├── models.py
-│   ├── requirements.txt
-│   ├── .env
-│   └── vercel.json
-├── index.html
-├── css/
-│   ├── style.css
-├── js/
-│   ├── main.js
-├── styles.css
-└── img/
-    ├── products/
-    │   ├── men/
-    │   │   └── product1.jpg
-    │   ├── women/
-    │   │   └── product1.jpg
-    ├── cart.svg
-├── .gitignore
-└── README.md
+### Overview
 
+The backend for this project is built with FastAPI and serves as the backend API for managing the shopping cart and other dynamic functionalities.
 
+### Prerequisites
 
-<!-- <button id="clear-cart-button" class="btn btn-danger">Clear Cart</button> -->
+Ensure you have Python 3.8 or later installed.
 
+### Installation
 
+1. **Clone the repository:**
+
+    ```bash
+    git clone https://github.com/Christmp19/eshop-website-design.git
+    cd eshop-website-design
+    ```
+
+2. **Install backend dependencies:**
+
+    Create and activate a virtual environment:
+
+    ```bash
+    python -m venv venv
+    source venv/bin/activate  # On Windows use `venv\Scripts\activate`
+    ```
+
+    Install the dependencies from `requirements.txt`:
+
+    ```bash
+    pip install -r requirements.txt
+    ```
+
+### Running the Backend
+
+1. **Start the FastAPI server:**
+
+    ```bash
+    uvicorn backend.main:app --reload
+    ```
+
+    The server will run on `http://127.0.0.1:8000`.
+
+2. **Navigate to the API documentation:**
+
+    Open your browser and go to `http://127.0.0.1:8000/docs` to access the FastAPI interactive documentation.
+
+### Integrating Frontend with Backend
+
+Ensure that the frontend application makes API requests to the correct backend endpoints. Update the API URLs in your frontend code as needed.
