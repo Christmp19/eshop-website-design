@@ -566,7 +566,7 @@ body {
 }
 
 .action-button {
-    background-color: #007bff;
+    background-color: var(--primary);
     color: white;
     border: none;
     padding: 10px 15px;
@@ -576,7 +576,7 @@ body {
 }
 
 .action-button:hover {
-    background-color: #0056b3;
+    background:var(--bg-gradient);
 }
 
 .empty-cart-message {
@@ -725,12 +725,13 @@ body {
 
 .breadcrumb a {
     text-decoration: none;
-    color: #007bff;
+    color: var(--primary);
     margin-right: 10px;
 }
 
 .breadcrumb a:hover {
-    text-decoration: underline;
+    text-decoration: none;
+    color: var(--tertiare);
 }
 
 .breadcrumb span {
