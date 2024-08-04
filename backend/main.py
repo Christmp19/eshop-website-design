@@ -2,7 +2,8 @@ import sys
 import os
 sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 
-from fastapi import Depends, FastAPI, HTTPException
+from fastapi import Depends, HTTPException
+from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from sqlalchemy.orm import Session
 from typing import List
@@ -11,10 +12,6 @@ import schemas
 from .database import SessionLocal, engine
 
 app = FastAPI()
-
-@app.get("/")
-async def read_root():
-    return {"message": "Hello World"}
 
 # Permettre l'accès CORS à votre API
 origins = [

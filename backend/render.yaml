@@ -5,6 +5,7 @@ services:
     runtime: python  # Spécifie que le runtime est Python
     buildCommand: pip install -r requirements.txt
     startCommand: gunicorn -c gunicorn_conf.py main:app
+
     envVars:
       - key: PORT
         value: 10000
