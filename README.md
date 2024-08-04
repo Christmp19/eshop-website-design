@@ -8,9 +8,9 @@ This project showcases a design for an e-commerce website (eshop) using only HTM
 ![Cover 1](/img/cover1.png)
 
 ### Cover 2 and Cover 3
-<div style="display: flex; justify-content: space-between;">
+<div style="display: flex; justify-content: space-between; align-items: center;">
   <img src="/img/cover2.png" alt="Cover 2" style="width: 49%;">
-  <img src="/img/cover3.png" alt="Cover 3" style="width: 49%;">
+  <img src="/img/cover3.png" alt="Cover 3" style="width: 20%;">
 </div>
 
 ## Features
