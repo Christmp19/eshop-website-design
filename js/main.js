@@ -2,6 +2,9 @@ document.addEventListener("DOMContentLoaded", function () {
     const cartBadge = document.querySelector('.badge1');
     const cartCount = document.querySelector('.badge');
     const cartList = document.querySelector('.cart-list');
+    const emptyCartMessage = document.querySelector('#empty-cart-message');
+    const CartMessage = document.querySelector('#cart-message');
+    const cartActions = document.querySelector('.cart-actions');
 
     function updateCartDisplay(itemCount) {
         cartBadge.textContent = `Cart (${itemCount})`;
@@ -10,6 +13,18 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function renderCartItems(cartItems) {
         cartList.innerHTML = '';
+        
+        if (cartItems.length === 0) {
+            emptyCartMessage.style.display = 'block';
+            CartMessage.style.display = 'none';
+            cartActions.style.display = 'none';
+            return;
+        }
+        
+        emptyCartMessage.style.display = 'none';
+        CartMessage.style.display = 'block';
+        cartActions.style.display = 'flex';
+
         cartItems.forEach(item => {
             const listItem = document.createElement('li');
             listItem.innerHTML = `
@@ -23,9 +38,8 @@ document.addEventListener("DOMContentLoaded", function () {
                     <span>$${item.price}</span>
                     <span>${item.quantity}</span>
                 </div>
-
                 <div class="item-actions">
-                <button class="remove" data-product-id="${item.product_id}">Remove</button>
+                    <button class="remove" data-product-id="${item.product_id}">Remove</button>
                 </div>
             `;
             cartList.appendChild(listItem);

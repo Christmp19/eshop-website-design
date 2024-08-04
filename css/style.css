@@ -508,7 +508,7 @@ body {
     width: 100%;
 }
 
-.cart h2 {
+.cart .cart-message h2, .cart .empty-cart-message h2 {
     margin-bottom: 20px;
     font-size: 30px;
     color: var(--secondary);

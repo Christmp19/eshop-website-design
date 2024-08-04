@@ -38,28 +38,34 @@
     <!-- main start -->
     <main>
 
-<section class="cart">
-    <div class="banner-panier">
-        <img src="./img/banner-panier.png" class="img-fluid" alt="banner panier">
-        <nav class="breadcrumb">
-            <a href="/">Home</a>
-            <span class="separator">&gt;</span>
-            <!-- <a href="/category">Category</a>
+        <section class="cart">
+            <div class="banner-panier">
+                <img src="./img/banner-panier.png" class="img-fluid" alt="banner panier">
+                <nav class="breadcrumb">
+                    <a href="/">Home</a>
+                    <span class="separator">&gt;</span>
+                    <!-- <a href="/category">Category</a>
                             <span class="separator">&gt;</span>
                             <a href="/subcategory">Subcategory</a>
                             <span class="separator">&gt;</span> -->
-            <span>Panier</span>
-    </div>
-    </nav>
-    <h2>Your Cart </h2>
-    <ul class="cart-list">
-        <!-- Cart items will be displayed here -->
-    </ul>
-    <div class="cart-actions">
-        <button id="clear-cart-button" class="action-button">Clear Cart</button>
-        <button id="checkout-button" class="action-button">Checkout</button>
-    </div>
-</section>
+                    <span>Panier</span>
+            </div>
+            </nav>
+            <div class="cart-message" id="cart-message" style="display: none;">
+                <h2>Your Cart</h2>
+            </div>
+            <div id="empty-cart-message" class="empty-cart-message" style="display: none;">
+                <h2>Your cart is empty.</h2>
+            </div>
+            <ul class="cart-list">
+                <!-- Cart items will be displayed here -->
+            </ul>
+            <div class="cart-actions">
+                <button id="clear-cart-button" class="action-button">Clear Cart</button>
+                <button id="checkout-button" class="action-button">Checkout</button>
+            </div>
+
+        </section>
 
     </main>
     <!-- main end -->
