@@ -5,19 +5,19 @@ This project showcases a design for an e-commerce website (eshop) using only HTM
 ## Preview
 
 ### Cover 1
-![Cover 1](/img/cover1.png)
+![Cover 1](img/cover1.png)
 
 ### Cover 2, Cover 3 and 4
 <table align="center">
   <tr>
     <td align="center">
-      <img src="/img/cover2.png?raw=true" alt="Cover 2" width="300">
+      <img src="img/cover2.png?raw=true" alt="Cover 2" width="300">
     </td>
     <td align="center">
-      <img src="/img/cover3.png?raw=true" alt="Cover 3" width="200">
+      <img src="img/cover3.png?raw=true" alt="Cover 3" width="200">
     </td>
     <td align="center">
-      <img src="/img/cover4.png?raw=true" alt="Cover 4" width="180">
+      <img src="img/cover4.png?raw=true" alt="Cover 4" width="180">
     </td>
   </tr>
 </table>
@@ -39,4 +39,34 @@ This project showcases a design for an e-commerce website (eshop) using only HTM
     ```
 
 2. Open `index.html` in your browser to view the website.
+
+## Structure des dossiers
+
+├── backend/
+│   ├── main.py
+│   ├── database.py
+│   ├── models.py
+│   ├── requirements.txt
+│   ├── .env
+│   └── vercel.json
+├── index.html
+├── css/
+│   ├── style.css
+├── js/
+│   ├── main.js
+├── styles.css
+└── img/
+    ├── products/
+    │   ├── men/
+    │   │   └── product1.jpg
+    │   ├── women/
+    │   │   └── product1.jpg
+    ├── cart.svg
+├── .gitignore
+└── README.md
+
+
+
+<!-- <button id="clear-cart-button" class="btn btn-danger">Clear Cart</button> -->
+
 

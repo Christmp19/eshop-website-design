@@ -322,6 +322,7 @@ body {
     font-size: 0.875rem;
     text-decoration: none;
     color: white;
+    cursor: pointer;
 }
 
 .product-buttons a img, .product-buttons button img {

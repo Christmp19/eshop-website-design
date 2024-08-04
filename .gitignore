@@ -1,0 +1,56 @@
+# Environnement virtuel
+.venv/
+env/
+venv/
+.vscode/
+
+# Fichiers de configuration Python
+*.pyc
+*.pyo
+*.pyd
+__pycache__/
+
+# Fichiers de configuration des IDE
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Fichiers de configuration de build
+*.egg
+*.egg-info/
+dist/
+build/
+*.manifest
+*.spec
+
+# Fichiers temporaires et de logs
+*.log
+*.tmp
+*.swp
+*.swo
+
+# Fichiers de cache
+.cache/
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Exclusions spécifiques à OS
+.DS_Store
+Thumbs.db
+
+# Fichiers de configuration d'outils de tests
+.coverage
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+*.tox/
+.nox/
+*.nox/
+*.coverage
+*.hypothesis/
+*.pytest_cache/
+*.coverage.*
+*.cache
+*.egg-info/
