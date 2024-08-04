@@ -313,7 +313,7 @@ body {
     margin: 0.5rem 0;
 }
 
-.product-buttons a {
+.product-buttons a, .product-buttons button {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -324,19 +324,19 @@ body {
     color: white;
 }
 
-.product-buttons a img {
+.product-buttons a img, .product-buttons button img {
     margin-right: 8px;
     width: 22px;
     height: 22px;
     filter: brightness(0) invert(1);
 }
 
-.product-buttons a.add-to-cart {
+.product-buttons button.add-to-cart {
     background: var(--btn-gradient);
     transition: background 0.3s ease;
 }
 
-.product-buttons a.add-to-cart:hover {
+.product-buttons button.add-to-cart:hover {
     background: var(--btn-gradient-hover);
 }
 
