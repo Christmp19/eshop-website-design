@@ -48,14 +48,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background: var(--text-white);
-    z-index: 1000;
-    padding: 15px 40px;
-    margin-bottom: 50px;
+    margin-bottom: 20px;
 }
 
 .header .brand {
@@ -238,7 +231,7 @@ body {
 .product-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 2.5rem;
+    gap: 15px;
     padding: 0 30px 0 10px;
 }
 
@@ -251,7 +244,7 @@ body {
     border-top-left-radius: 0.5rem;
     border-top-right-radius: 0.5rem;
     width: 100%;
-    height: auto;
+    height: 350px;
 }
 
 .product-info {
@@ -567,6 +560,7 @@ body {
     width: 15%;
     text-align: center;
 }
+
 .item-info span:last-child {
     width: 15%;
     text-align: center;
@@ -702,10 +696,6 @@ body {
 
 /* Responsive Styles */
 @media (max-width: 768px) {
-    .header {
-
-        padding: 10px 0;
-    }
 
     .contact-form {
         padding: 15px;
@@ -781,9 +771,8 @@ body {
 
 /* blog styles */
 .blog-posts {
-    padding: 20px;
+    padding: 0;
     margin: 20px auto;
-    padding: 20px;
 }
 
 .blog-posts h3 {
@@ -1129,15 +1118,15 @@ body {
 
 @media only screen and (max-width: 767px) {
 
-    .product-grid,
+    .product-grid {
+        grid-template-columns: repeat(1, 1fr);
+        padding: 10px 30px 0 25px;
+    }
+
     .cart-list {
         grid-template-columns: repeat(1, 1fr);
         padding: 10px 30px 0 25px;
     }
-        .post-grid {
-            grid-template-columns: repeat(1, 1fr);
-            padding: 10px 30px 0 25px;
-        }
 
     .contact-us {
         grid-template-columns: repeat(1, 1fr);
@@ -1152,20 +1141,23 @@ body {
     }
 }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 575px) {
     .product-grid {
         grid-template-columns: repeat(2, 1fr);
         padding: 10px 30px 0 30px;
     }
 
-    .cart-list {
-        grid-template-columns: repeat(2, 1fr);
-        padding: 10px 30px 0 50px;
-    }
-
     .post-grid {
         grid-template-columns: repeat(2, 1fr);
         padding: 10px 30px 0 30px;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+
+    .cart-list {
+        grid-template-columns: repeat(2, 1fr);
+        padding: 10px 30px 0 50px;
     }
 
     .contact-us {
@@ -1177,7 +1169,7 @@ body {
     }
 }
 
-@media only screen and (min-width: 1024px) {
+@media only screen and (min-width: 1025px) {
     .product-grid {
         grid-template-columns: repeat(3, 1fr);
         padding: 10px 30px 0 20px;
@@ -1228,10 +1220,10 @@ body {
         padding: 10px 30px 0 50px;
     }
 
-   .cart-list {
-       grid-template-columns: repeat(2, 1fr);
-       padding: 10px 30px 0 20px;
-   }
+    .cart-list {
+        grid-template-columns: repeat(2, 1fr);
+        padding: 10px 30px 0 20px;
+    }
 
     .contact-us {
         grid-template-columns: repeat(2, 1fr);
