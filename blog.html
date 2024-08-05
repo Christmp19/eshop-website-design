@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- style css -->
     <link rel="stylesheet" href="./css/style.css" />
-    <title>Cart - eshop</title>
+    <title>Blog - eshop</title>
 </head>
 
 <body class="container">
@@ -22,10 +22,10 @@
         <!-- nav start -->
         <nav class="links">
             <a href="/" class="link">Home</a>
-            <a href="#" class="link">Shop</a>
-            <a href="#" class="link">Blog</a>
+            <a href="/store.html" class="link">Store</a>
+            <a href="/blog.html" class="link">Blog</a>
             <a href="/contact.html" class="link">Contact</a>
-            <a href="/panier.html" class="cart">
+            <a href="/cart.html" class="cart">
                 <img src="./img/cart.svg" class="img-fluid" alt="image cart">
                 <span class="badge1">Cart (0)</span>
                 <span class="badge">(0)</span>
@@ -37,36 +37,23 @@
 
     <!-- main start -->
     <main>
-
-        <section class="cart">
-            <div class="banner-panier">
-                <img src="./img/banner-panier.png" class="img-fluid" alt="banner panier">
-                <nav class="breadcrumb">
-                    <a href="/">Home</a>
-                    <span class="separator">&gt;</span>
-                    <!-- <a href="/category">Category</a>
-                            <span class="separator">&gt;</span>
-                            <a href="/subcategory">Subcategory</a>
-                            <span class="separator">&gt;</span> -->
-                    <span>Panier</span>
-            </div>
+        <section class="banner">
+            <img src="./img/banner-blog.jpg" class="img-fluid" alt="banner blog">
+            <!-- breadcrumb -->
+            <nav class="breadcrumb">
+                <a href="/">Home</a>
+                <span class="separator">&gt;</span>
+                <span>Blog</span>
             </nav>
-            <div class="cart-message" id="cart-message" style="display: none;">
-                <h2>Your Cart</h2>
-            </div>
-            <div id="empty-cart-message" class="empty-cart-message" style="display: none;">
-                <h2>Your cart is empty.</h2>
-            </div>
-            <ul class="cart-list">
-                <!-- Cart items will be displayed here -->
-            </ul>
-            <div class="cart-actions">
-                <button id="clear-cart-button" class="action-button">Clear Cart</button>
-                <button id="checkout-button" class="action-button">Checkout</button>
-            </div>
-
+            <!-- breadcrumb -->
         </section>
 
+        <!-- Blog Posts Container -->
+        <section class="blog-posts">
+            <div class="post-grid" id="postGrid">
+                <!-- Articles will be dynamically injected here -->
+            </div>
+        </section>
     </main>
     <!-- main end -->
 
@@ -87,6 +74,8 @@
 
     <!-- javascript -->
     <script src="./js/main.js"></script>
+    <script src="./js/navActive.js"></script>
+    <script src="./js/blog.js"></script>
 </body>
 
 </html>

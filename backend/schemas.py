@@ -4,7 +4,10 @@ class Product(BaseModel):
     id: int
     name: str
     price: float
-    quantity: int = 1
+    img_url: str
+
+    class Config:
+        from_attributes = True
 
 class CartItemCreate(BaseModel):
     product_id: int
@@ -15,6 +18,17 @@ class CartItemResponse(BaseModel):
     name: str
     price: float
     quantity: int
+    img_url: str
 
     class Config:
-        orm_mode = True
+        from_attributes = True
+
+# Nouveau schéma pour les articles de blog
+class BlogPost(BaseModel):
+    id: int
+    title: str
+    excerpt: str
+    image_url: str
+
+    class Config:
+        from_attributes = True

@@ -90,4 +90,17 @@ Ensure you have Python 3.8 or later installed.
 
 ### Integrating Frontend with Backend
 
+### Add to database
+
+    ```bash
+    sqlite3 test.db
+    ```
+
 Ensure that the frontend application makes API requests to the correct backend endpoints. Update the API URLs in your frontend code as needed.
+
+<!-- debug -->
+<!-- sqlite3 test.db -->
+<!-- ALTER TABLE cart_items ADD COLUMN img_url TEXT; -->
+<!-- SELECT * FROM cart_items WHERE img_url IS NULL;-->
+<!-- UPDATE cart_items SET img_url = 'default_image_url' WHERE img_url IS NULL; -->
+

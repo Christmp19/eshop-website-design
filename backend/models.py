@@ -10,3 +10,4 @@ class CartItem(Base):
     name = Column(String, index=True)
     price = Column(Float)
     quantity = Column(Integer, default=1)
+    img_url = Column(String)

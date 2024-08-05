@@ -26,14 +26,18 @@ document.addEventListener("DOMContentLoaded", function () {
         cartActions.style.display = 'flex';
 
         cartItems.forEach(item => {
+            console.log('Item:', item); 
+            
             const listItem = document.createElement('li');
             listItem.innerHTML = `
                 <div class="item-info">
+                <span>Image</span>
                     <span>Name</span>
                     <span>Price</span>
                     <span>Quantity</span>
                 </div>
                 <div class="item-info">
+                   <img src="${item.img_url}" class="img-fluid" alt="${item.name}">
                     <span>${item.name}</span>
                     <span>$${item.price}</span>
                     <span>${item.quantity}</span>
