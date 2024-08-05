@@ -18,6 +18,7 @@ origins = [
     "http://127.0.0.1:5501",       # Frontend local
     "http://localhost:8000",       # FastAPI local
     "https://eshop-website-design.vercel.app",  # URL Vercel ou autre
+     "*"                             # Pour permettre toutes les origines
 ]
 
 app.add_middleware(
