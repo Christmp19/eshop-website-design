@@ -238,17 +238,24 @@ body {
 .product-card {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
     border-radius: 0.6rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    transition: transform 0.3s ease;
+    padding-top: 25px;
 }
 
 .product-card img {
-    border-top-left-radius: 0.5rem;
-    border-top-right-radius: 0.5rem;
-    width: 100%;
-    height: 350px;
+    border-radius: 0.5rem;
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    object-position: center
 }
 
 .product-info {
-    padding: 1.25rem;
+    padding: 1rem 0;
 }
 
 .product-info h3>a {

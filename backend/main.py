@@ -5,7 +5,7 @@ sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 from fastapi import Depends, FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from sqlalchemy.orm import Session
-from typing import List
+from typing import Dict, List
 import models
 import schemas
 from .database import SessionLocal, engine
@@ -15,6 +15,7 @@ app = FastAPI()
 # Permettre l'accès CORS à votre API
 origins = [
     "http://localhost",            # Frontend local
+    "http://localhost:3000"         # Frontend
     "http://127.0.0.1:5501",       # Frontend local
     "http://localhost:8000",       # FastAPI local
     "https://eshop-website-design.vercel.app",  # URL Vercel ou autre
@@ -42,16 +43,70 @@ models.Base.metadata.create_all(bind=engine)
 
 # Simulation d'une base de données de produits
 products_db = {
+    # Produits pour Hommes
     1: schemas.Product(id=1, name="Mens T-Shirt", price=19.99, img_url="/img/products/men/product1.jpg"),
     2: schemas.Product(id=2, name="Slim Khaki Trousers", price=34.99, img_url="/img/products/men/product2.jpg"),
     3: schemas.Product(id=3, name="Nike Shoes", price=89.99, img_url="/img/products/men/product3.jpg"),
     4: schemas.Product(id=4, name="Wrist Watch", price=59.99, img_url="/img/products/men/product4.jpg"),
-    5: schemas.Product(id=5, name="V Neck Tassel Cape", price=24.99, img_url="/img/products/women/product1.jpg"),
-    6: schemas.Product(id=6, name="Printed Wrap Dress", price=29.99, img_url="/img/products/women/product2.jpg"),
-    7: schemas.Product(id=7, name="Blue Denim Dress", price=39.99, img_url="/img/products/women/product3.jpg"),
-    8: schemas.Product(id=8, name="High Waist Denim Skirt", price=44.99, img_url="/img/products/women/product4.jpg"),
+    5: schemas.Product(id=5, name="Leather Jacket", price=99.99, img_url="/img/products/men/product5.jpg"),
+    6: schemas.Product(id=6, name="Formal Shirt", price=45.00, img_url="/img/products/men/product6.jpg"),
+    7: schemas.Product(id=7, name="Sports Shorts", price=25.00, img_url="/img/products/men/product7.jpg"),
+    8: schemas.Product(id=8, name="Casual Hoodie", price=55.00, img_url="/img/products/men/product8.jpg"),
+    9: schemas.Product(id=9, name="Running Shoes", price=75.99, img_url="/img/products/men/product9.jpg"),
+    10: schemas.Product(id=10, name="Denim Jeans", price=59.50, img_url="/img/products/men/product10.jpg"),
+
+    # Produits pour Femmes
+    11: schemas.Product(id=11, name="V Neck Tassel Cape", price=24.99, img_url="/img/products/women/product1.jpg"),
+    12: schemas.Product(id=12, name="Printed Wrap Dress", price=29.99, img_url="/img/products/women/product2.jpg"),
+    13: schemas.Product(id=13, name="Blue Denim Dress", price=39.99, img_url="/img/products/women/product3.jpg"),
+    14: schemas.Product(id=14, name="High Waist Denim Skirt", price=44.99, img_url="/img/products/women/product4.jpg"),
+    15: schemas.Product(id=15, name="Chiffon Blouse", price=19.99, img_url="/img/products/women/product5.jpg"),
+    16: schemas.Product(id=16, name="Stiletto Heels", price=49.99, img_url="/img/products/women/product6.jpg"),
+    17: schemas.Product(id=17, name="Leather Handbag", price=69.99, img_url="/img/products/women/product7.jpg"),
+    18: schemas.Product(id=18, name="Sports Leggings", price=29.50, img_url="/img/products/women/product8.jpg"),
+    19: schemas.Product(id=19, name="Cashmere Scarf", price=35.00, img_url="/img/products/women/product9.jpg"),
+    20: schemas.Product(id=20, name="Evening Gown", price=119.99, img_url="/img/products/women/product10.jpg"),
+
+    # Produits pour Enfants
+    21: schemas.Product(id=21, name="Kids T-Shirt", price=12.99, img_url="/img/products/kids/product1.jpg"),
+    22: schemas.Product(id=22, name="Cartoon Hoodie", price=18.99, img_url="/img/products/kids/product2.jpg"),
+    23: schemas.Product(id=23, name="Denim Shorts", price=14.99, img_url="/img/products/kids/product3.jpg"),
+    24: schemas.Product(id=24, name="Sneakers", price=29.99, img_url="/img/products/kids/product4.jpg"),
+    25: schemas.Product(id=25, name="Summer Hat", price=9.99, img_url="/img/products/kids/product5.jpg"),
+    26: schemas.Product(id=26, name="School Backpack", price=24.99, img_url="/img/products/kids/product6.jpg"),
+    27: schemas.Product(id=27, name="Rain Boots", price=19.99, img_url="/img/products/kids/product7.jpg"),
+    28: schemas.Product(id=28, name="Boys Jacket", price=34.99, img_url="/img/products/kids/product8.jpg"),
+    29: schemas.Product(id=29, name="Girls Dress", price=22.99, img_url="/img/products/kids/product9.jpg"),
+    30: schemas.Product(id=30, name="Play Sandals", price=15.99, img_url="/img/products/kids/product10.jpg"),
 }
 
+@app.get("/products/home", response_model=Dict[str, List[schemas.Product]])
+async def get_home_products():
+    # Séparer les produits en trois catégories
+    mens_products = [product for product in products_db.values() if 1 <= product.id <= 10][:4]
+    womens_products = [product for product in products_db.values() if 11 <= product.id <= 20][:4]
+    kids_products = [product for product in products_db.values() if 21 <= product.id <= 30][:4]
+
+    # Retourner les produits limités pour la page d'accueil
+    return {
+        "men": mens_products,
+        "women": womens_products,
+        "kids": kids_products
+    }
+
+@app.get("/products", response_model=Dict[str, List[schemas.Product]])
+async def get_products():
+    # Séparer les produits en trois catégories
+    mens_products = [product for product in products_db.values() if 1 <= product.id <= 10]
+    womens_products = [product for product in products_db.values() if 11 <= product.id <= 20]
+    kids_products = [product for product in products_db.values() if 21 <= product.id <= 30]
+
+    # Retourner tous les produits
+    return {
+        "men": mens_products,
+        "women": womens_products,
+        "kids": kids_products
+    }
 blog_posts_db = {
     1: schemas.BlogPost(id=1, title="Exciting New Features in Our Latest Update", excerpt="Discover the new features in our latest update that will enhance your experience and improve performance.", image_url="/img/posts/post1.jpg"),
     2: schemas.BlogPost(id=2, title="Tips and Tricks for a Better User Experience", excerpt="Explore some useful tips and tricks to make the most out of our platform and improve your user experience.", image_url="/img/posts/post2.jpg"),
